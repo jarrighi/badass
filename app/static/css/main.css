@@ -1,0 +1,15 @@
+body {
+    background-color: rgb(120, 130, 145);
+}
+
+h1 {
+    background-color: rgb(80, 90, 100);
+    color:white;
+    padding: 30px;
+}
+
+h3 {
+    height: 120px;
+    color: white; 
+    border-bottom: 2px solid white;
+}
