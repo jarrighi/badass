@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>All Skills</h1>
+
+{% for skill in skills %}
+  <div class="skill-item">
+    <h4> Level {{ skill.level }}: {{ skill.title }} </h4>
+    <p> Description: {{ skill.description }} </p>
+  </div>
+{% endfor %}
+
+{% endblock %}
