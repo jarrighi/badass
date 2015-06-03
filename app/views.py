@@ -13,6 +13,13 @@ def skills():
     result.append(skill)
   return render_template('skills.html', skills=result)
 
+@app.route('/skill/<skill>')
+def skill_detail(skill):
+  skill_data = {'title': skill}
+  skill_data = models.Skill.query.get(skill)
+  #print query.title
+  return render_template('skill_detail.html', data=skill_data)
+
 @app.route('/add_skill', methods=['POST'])
 def add_skill():
   title = request.form['skill_name']
