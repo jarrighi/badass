@@ -4,7 +4,7 @@
 
 {% for skill in skills %}
   <div class="skill-item">
-    <h4> Level {{ skill.level }}: {{ skill.title }} </h4>
+    <h4 class="level-{{ skill.level }}">{{ skill.title }}</h4>
     <p> Description: {{ skill.description }} </p>
   </div>
 {% endfor %}

@@ -13,3 +13,41 @@ h3 {
     color: white; 
     border-bottom: 2px solid white;
 }
+
+.skill-item {
+    margin-bottom: 50px;
+    border: solid rgb(80, 90, 100);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.skill-item p{
+    margin-left: 130px;
+}
+
+.level-1::before, .level-3::before, .level-5::before {
+    margin-right: 20px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: .5em;
+    color: white;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+}
+
+.level-1::before {
+    content: "Can't do ";
+    background-color: rgb(0, 90, 150);
+}
+
+.level-3::before {
+    content: "Working on ";
+    background-color: rgb(180, 185, 50);
+}
+
+.level-5::before {
+    content: "Mastered ";
+    background-color: rgb(180, 25, 100);
+}
