@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Skills Piles</h1>
+  <div class='pileset'>
+    {% for level in data %}
+    <div class='pile four columns'> 
+      <h3>{{ level.title }}</h3>
+
+      {% for skill in level.skills %}
+      <div class='pile-item'>{{ skill.title }} </div>
+      {% endfor %}
+
+      <div class="add-skill"><div class="add-skill-a button">add a skill</div></div>
+
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}
