@@ -4,11 +4,11 @@
   <h1>Skills Piles</h1>
   <div class='pileset'>
     {% for level in data %}
-    <div class='pile four columns'> 
+    <div class='pile four columns' id="pile-{{ level.level }}"> 
       <h3>{{ level.title }}</h3>
 
       {% for skill in level.skills %}
-      <div class='pile-item'><a href="/skill/{{skill.id}}">{{ skill.title }}</a></div>
+      <div class='pile-item draggable' draggable="true" style="cursor:move; position:relative; left:0px; top: 0px;"><a href="/skill/{{skill.id}}">{{ skill.title }}</a></div>
       {% endfor %}
 
       <div class="add-skill"><div class="add-skill-a button">add a skill</div></div>
@@ -16,4 +16,5 @@
     </div>
     {% endfor %}
   </div>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/drag.js') }}" ></script>
 {% endblock %}

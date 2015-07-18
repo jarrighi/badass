@@ -15,9 +15,7 @@ def skills():
 
 @app.route('/skill/<skill>')
 def skill_detail(skill):
-  skill_data = {'title': skill}
   skill_data = models.Skill.query.get(skill)
-  #print query.title
   return render_template('skill_detail.html', data=skill_data)
 
 @app.route('/add_skill', methods=['POST'])
@@ -38,7 +36,7 @@ def piles():
   return render_template('piles.html', data=result)
 
 def get_pile_data(level, name):
-  result = {'title':name, 'skills': []}
+  result = {'level': level, 'title':name, 'skills': []}
   query = models.Skill.query.filter(models.Skill.level==level)
   for skill in query:
     result['skills'].append(skill)

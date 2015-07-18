@@ -1,6 +1,6 @@
 $(document).ready(function(){
   console.log('ready')
-
+  // TODO: use underscore or lodash for this
   var html_block = '<form method="post" action="/add_skill">' +
   '<label for="skill_name">skill</label>' +
   '<input type="text" name="skill_name" id="skill_name">' +
@@ -11,16 +11,18 @@ $(document).ready(function(){
   '<input type="submit" name="submit" id="submit">' +
   '</form>';
 
-  $("button").click(function bindButtonClick(){
+  $("button").on("click", function bindButtonClick(){
     $('#add-skill').html(html_block); // end html
-    $('form').submit(function(evt) {
+    $('form').on("submit", function(evt) {
       evt.preventDefault();
       var url = $(this).attr("action");
       var formData = $(this).serialize();
       $.post(url, formData, function(response){
         $('#add-skill').html("<button>Add a skill</button>")
-        $("button").click(bindButtonClick);
+        $("button").on("click", bindButtonClick);
       }); // end post
     }); // end submit
   }); //end click
 }); // end ready
+
+// TODO: hide and show instead of replacing html in #add-skill
